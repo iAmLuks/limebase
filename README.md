@@ -115,22 +115,20 @@ client.delete(function(err, result) {
 ```JS
 // Updating existing object example - Success returns null
 
-client.event.on('ready', function() {
+client.event.on('ready', function () {
 
-// Get the object we want to update
-client.get(function(err, result) {
-    if ( err ) return;
-    let updatedObject = result;
-    updatedObject[0].name = "Changed Name"; // Change value of retrieved object
-    // Send changed object back to server
-    client.update(function(err, result) {
-            if ( err ) return;
+    // Get the object we want to update
+    client.get(function (err, result) {
+        if (err) return;
+        let updatedObject = result;
+        updatedObject[0].name = "Changed Name"; // Change value of retrieved object
+        // Send changed object back to server
+        client.update(function (err, result) {
+            if (err) return;
             console.log(result);
-    }, "name", "Test", updatedObject);
-}, "name", "Test");
-    })
+        }, "name", "Test", updatedObject);
+    }, "name", "Test");
 })
-
 ```
 
     
