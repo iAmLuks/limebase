@@ -1,0 +1,20 @@
+{
+  "name": "limedb",
+  "version": "1.0.0",
+  "description": "In-memory Object database",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Database",
+    "Memory",
+    "Objects",
+    "Fast",
+    "Low-level"
+  ],
+  "author": "Luka"
+}

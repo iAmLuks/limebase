@@ -1,0 +1,69 @@
+enum MessageType
+{
+    REQUEST_LOGIN       =   0x1001;
+    RESPONSE_LOGIN      =   0x1002;
+
+    REQUEST_KEEPALIVE   =   0x1003;
+    RESPONSE_KEEPALIVE  =   0x1004;
+
+    REQUEST_CALL        =   0x1010;
+    RESPONSE_CALL       =   0x1011;
+}
+
+enum LoginResultType
+{
+    LOGIN_SUCCESS       =   0;
+    LOGIN_AUTH_FAILED   =   1;
+}
+
+enum CallResultType
+{
+    CALL_SUCCESS        =   0;
+    CALL_NO_METHOD      =   1;
+    CALL_AUTH_FAILED    =   2;
+}
+
+
+message MessageHeader
+{
+    required int32      message_type = 1;
+    required bytes      message_body = 2;
+}
+
+
+message LoginRequest
+{
+    optional string     auth = 1;
+}
+
+message LoginResponse
+{
+    required int32      result = 1;
+    optional string     session_id = 2;
+    repeated string     methods = 3;
+}
+
+
+message KeepAliveRequest
+{
+}
+
+message KeepAliveResponse
+{
+}
+
+
+message CallRequest
+{
+    required string     call_id = 1;
+    required string     method = 2;
+    optional bytes      arguments = 3;
+}
+
+message CallResponse
+{
+    required string     call_id = 1;
+    required int32      result = 2;
+    required string     method = 3;
+    optional bytes      returns = 4;
+}
