@@ -15,12 +15,19 @@ everything is an object, and many objects are quite complex.
 
 ## Quick Start
 
+NPM
+
+```cmd
+npm install limedatabase
+```
+
+
 Creating LimeDB Server
 
 It is preferred to have serverside of database in seperate project and only use LimeDB Client in your main project.
 
 ```js
-const limedb = require('limeDB')
+const limedb = require('limedatabase')
 const limedb_server = new limedb.Server();
 
 limedb_server.run({
@@ -33,7 +40,7 @@ limedb_server.run({
 Using LimeDB Server with specific database name
 
 ```js
-var limedb = require('limeDB')
+var limedb = require('limedatabase')
 var limedb_server = new limedb.Server();
 
 limedb_server.run({
@@ -47,7 +54,7 @@ limedb_server.run({
 Connecting to LimeDB Server ( Client )
 
 ```js
-var limeDB = require('limeDB')
+var limeDB = require('limedatabase')
 var client = new limeDB.Client();
 
 client.tryConnect({
@@ -115,22 +122,20 @@ client.delete(function(err, result) {
 ```JS
 // Updating existing object example - Success returns null
 
-client.event.on('ready', function() {
+client.event.on('ready', function () {
 
-// Get the object we want to update
-client.get(function(err, result) {
-    if ( err ) return;
-    let updatedObject = result;
-    updatedObject[0].name = "Changed Name"; // Change value of retrieved object
-    // Send changed object back to server
-    client.update(function(err, result) {
-            if ( err ) return;
+    // Get the object we want to update
+    client.get(function (err, result) {
+        if (err) return;
+        let updatedObject = result;
+        updatedObject[0].name = "Changed Name"; // Change value of retrieved object
+        // Send changed object back to server
+        client.update(function (err, result) {
+            if (err) return;
             console.log(result);
-    }, "name", "Test", updatedObject);
-}, "name", "Test");
-    })
+        }, "name", "Test", updatedObject);
+    }, "name", "Test");
 })
-
 ```
 
     

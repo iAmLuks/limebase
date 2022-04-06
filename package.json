@@ -1,6 +1,6 @@
 {
-  "name": "limedb",
-  "version": "1.0.0",
+  "name": "limedatabase",
+  "version": "1.0.1",
   "description": "In-memory Object database",
   "main": "index.js",
   "directories": {
