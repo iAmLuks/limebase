@@ -1,7 +1,7 @@
 {
-  "name": "limedatabase",
-  "version": "1.0.1",
-  "description": "In-memory Object database",
+  "name": "limebase",
+  "version": "1.0.6",
+  "description": "Multi-purpose javascript Database",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -11,8 +11,11 @@
   },
   "keywords": [
     "Database",
+    "NoSQL",
+    "Disk",
     "Memory",
     "Objects",
+    "Object-Oriented",
     "Fast",
     "Low-level"
   ],
