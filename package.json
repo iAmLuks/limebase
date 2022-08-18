@@ -1,6 +1,6 @@
 {
   "name": "limebase",
-  "version": "1.0.6.1",
+  "version": "1.0.8",
   "description": "Multi-purpose javascript Database",
   "main": "index.js",
   "directories": {
