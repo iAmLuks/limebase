@@ -1,6 +1,6 @@
 {
   "name": "limebase",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Multi-purpose javascript Database",
   "main": "index.js",
   "directories": {
@@ -13,8 +13,8 @@
     "Database",
     "NoSQL",
     "Disk",
+    "Backend",
     "Memory",
-    "Objects",
     "Object-Oriented",
     "Fast",
     "Low-level"
